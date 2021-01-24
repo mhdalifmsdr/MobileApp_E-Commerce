@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".submain_pemesanan">
+
+
+    // DATA PEMESAN
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kontak Pemesan"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NAMA : "
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/nm_pemesan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama Pemesan"
+                        android:textColor="@color/colorText"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ALAMAT : "
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/alamat_pemesan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Alamat Pemesan"
+                        android:textColor="@color/colorText"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //PEMESANAN
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Pemesanan"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            // ayam goreng
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ayam Goreng Original"
+                            android:textStyle="bold"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1.5"
+                                    android:nextFocusLeft="@id/linier_jumlah_ayam_goreng">
+
+                                    <ImageView
+                                        android:id="@+id/img_ayam_goreng"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="5dp"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/ayam_goreng_original"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="8dp"
+                                        android:background="@drawable/rounded_shape"
+                                        android:padding="3dp"
+                                        android:text="Favorite"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="8dp"
+                                        android:textStyle="bold"/>
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/linier_jumlah_ayam_goreng"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:id="@+id/btn_kurang_ayam"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:backgroundTint="@color/buttonJumlah"
+                                        android:onClick="decrementAyamGoreng"
+                                        android:text="-"/>
+
+                                    <TextView
+                                        android:id="@+id/txt_jumlah_ayam"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text="0"
+                                        android:textSize="20dp"/>
+                                    <Button
+                                        android:id="@+id/btn_tambah_ayam"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:backgroundTint="@color/buttonJumlah"
+                                        android:onClick="incrementAyamGoreng"
+                                        android:text="+"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="5dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total Harga"/>
+                                    <TextView
+                                        android:id="@+id/txt_harga_ayam"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                    </LinearLayout>
+
+                // chicken wings
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chicken Wings"
+                        android:textStyle="bold"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1.5"
+                            android:nextFocusLeft="@id/linier_jumlah_chicken_wings">
+
+                            <ImageView
+                                android:id="@+id/img_chicken_wings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/chiken_wings"/>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linier_jumlah_chicken_wings"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_kurang_wings"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:backgroundTint="@color/buttonJumlah"
+                                android:onClick="decrementChickenWigs"
+                                android:text="-"/>
+
+                            <TextView
+                                android:id="@+id/txt_jumlah_wings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="0"
+                                android:textSize="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_tambah_wings"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:backgroundTint="@color/buttonJumlah"
+                                android:onClick="incrementChickenWings"
+                                android:text="+"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="vertical"
+                            android:paddingLeft="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Harga"/>
+                            <TextView
+                                android:id="@+id/txt_harga_wings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingTop="20dp"
+                    android:text="TAMBAHAN"
+                    android:textStyle="bold"/>
+
+                <CheckBox
+                    android:id="@+id/cb_merah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Sambal Merah"
+                    android:textColor="@color/colorText"/>
+                <CheckBox
+                    android:id="@+id/cb_ijo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Sambal Ijo"
+                    android:textColor="@color/colorText"/>
+                <CheckBox
+                    android:id="@+id/lalapan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Lalapan"
+                    android:textColor="@color/colorText"/>
+                <CheckBox
+                    android:id="@+id/nasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Nasi"
+                    android:textColor="@color/colorText"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_pesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_shape"
+            android:backgroundTint="@color/buttonSend"
+            android:text="Pesan"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>
